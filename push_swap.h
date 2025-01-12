@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:15:46 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/10 21:17:02 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/01/12 17:00:31 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ typedef struct s_list
 {
     int data;
     int index;
+    int size;
+    int pos;
+    int start;
+    int end;
     struct s_list *next;
 }   t_stack;
 
@@ -43,5 +47,6 @@ void rr(t_stack **a, t_stack **b);
 void rrr(t_stack **a, t_stack **b);
 char	**ft_split(const char *s, char c);
 int ft_atoi(char *str);
-
+void algo_for2_elements(t_stack **a);
+void algo_for3_elements(t_stack **a);
 #endif

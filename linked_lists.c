@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 14:47:14 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/05 21:35:41 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:32:10 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,14 @@ void	ft_lstadd_front(t_stack **stack, t_stack *new)
 
 void 	ft_lstadd_back(t_stack **stack, t_stack *new)
 {
+    t_stack *last;
     if(!new || !stack)
         return;
-    new->next=*stack;
-    *stack = new;    
+    last = ft_lstlast(*stack);
+    if(!last)
+        *stack = new;
+    else
+        last->next = new;    
 }
 
 t_stack	*ft_lstlast(t_stack *lst)

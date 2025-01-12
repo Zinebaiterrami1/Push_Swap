@@ -47,9 +47,9 @@ int main()
     print_stack(a);
     printf("---------------------------------------------------\n");
     print_stack(b);
-   // pa(&a, &b);
-   // print_stack(a);
-   // print_stack(b);
+   pa(&a, &b);
+   print_stack(a);
+   print_stack(b);
     pb(&a, &b);
     print_stack(a);
     print_stack(b);
@@ -63,6 +63,17 @@ int main()
     ss(&a, &b);
     print_stack(a);
     print_stack(b);
-
+    printf("----------------------------algo sorting tests---------------------------------\n");
+    t_stack *t;
+    t = NULL;
+    t_stack *nod1 = ft_lstnew(9);
+    t_stack *nod2 = ft_lstnew(1);
+    t_stack *nod3 = ft_lstnew(8);
+    ft_lstadd_back(&t, nod1);
+    ft_lstadd_back(&t, nod2);
+    ft_lstadd_back(&t, nod3);
+    print_stack(t);
+    algo_for3_elements(&t);
+    print_stack(t);
 }
 
