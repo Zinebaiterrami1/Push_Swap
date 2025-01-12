@@ -1,0 +1,95 @@
+-firt create struct for a single node 
+-create struct for stack
+-create functions to manupilate linked lists
+-atoi, split 
+-create fct for both instructions for a & b to manipulate the stacks
+-then start implementen the algo
+
+camel_to_snake
+int main(int ac, char **av)
+{
+        int i;
+
+        i = 0;
+        if(ac == 2)
+        {
+                while(av[1][i])
+                {
+                        if(av[1][i] >= 'A' && av[1][i] <= 'Z')
+                        {
+                                write(1, "_", 1);
+                               av[1][i] += 32;
+                               write(1, &av[1][i], 1);
+                        }
+                        else
+                                write(1, &av[1][i], 1);
+                        i ++;
+                }
+        }
+        write(1, "\n", 1);
+}
+
+pgcd 
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int ac, char **av)
+{
+	int i;
+	int pgcd;
+	int nb1;
+	int nb2;
+	int limit;
+
+	i = 1;
+	pgcd = 1;
+
+	if(ac == 3)
+	{
+		nb1=atoi(av[1]);
+		nb2=atoi(av[2]);
+
+		if(nb1 < nb2)
+			limit = nb1;
+		else 
+			limit = nb2;
+
+		while(i <= limit)
+		{
+			if(nb1 % i == 0 && nb2 % i == 0)
+				pgcd = i;
+			i++;
+		}
+	printf("%d", pgcd);
+	}
+	printf("\n");
+}
+
+//max
+
+╭─   ~/42-EXAM/rendu/max   main ?8 ····················  10s  17:50:28 ─╮
+╰─❯ cat max.c                                                                ─╯
+#include <stdio.h>
+
+int 	max(int* tab, unsigned int len)
+{
+	int fix;
+	int max;
+	int i;
+
+	i = 0;
+	if(!tab)
+		return (0);
+	fix = tab[0];
+	while(i < len)
+	{
+		if(fix < tab[i])
+		fix = tab[i];
+		i++;
+	}
+	max = fix;
+	return(max);
+}
+
+//
