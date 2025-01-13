@@ -8,6 +8,8 @@ SRCS = common_instructions.c\
 		instructions_b.c\
 		linked_lists.c\
 		push_swap.c\
+		sort_algo.c\
+		utils.c\
 		main.c
 
 OBJECTS = $(SRCS:.c=.o)

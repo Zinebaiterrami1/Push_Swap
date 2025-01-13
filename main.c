@@ -66,8 +66,8 @@ int main()
     printf("----------------------------algo sorting tests---------------------------------\n");
     t_stack *t;
     t = NULL;
-    t_stack *nod1 = ft_lstnew(9);
-    t_stack *nod2 = ft_lstnew(1);
+    t_stack *nod1 = ft_lstnew(1);
+    t_stack *nod2 = ft_lstnew(9);
     t_stack *nod3 = ft_lstnew(8);
     ft_lstadd_back(&t, nod1);
     ft_lstadd_back(&t, nod2);
@@ -75,5 +75,23 @@ int main()
     print_stack(t);
     algo_for3_elements(&t);
     print_stack(t);
+    printf("-----------for 4 elements--------------\n");
+    t_stack *s;
+    s = NULL;
+    nod1 = ft_lstnew(2);
+    nod2 = ft_lstnew(3);
+    nod3 = ft_lstnew(4);
+    t_stack *nod4 = ft_lstnew(1);
+    ft_lstadd_back(&s, nod1);
+    ft_lstadd_back(&s, nod2);
+    ft_lstadd_back(&s, nod3);
+    ft_lstadd_back(&s, nod4);
+    print_stack(s);
+    algo_for4_elements(&s);
+    print_stack(s);
+    printf("-------------------for 5 elements---------------------\n");
+    t_stack *f;
+    f = NULL;
+    
 }
 

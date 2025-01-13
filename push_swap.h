@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:15:46 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/12 17:00:31 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/01/13 00:02:07 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,8 @@ char	**ft_split(const char *s, char c);
 int ft_atoi(char *str);
 void algo_for2_elements(t_stack **a);
 void algo_for3_elements(t_stack **a);
+void algo_for4_elements(t_stack **a);
+int find_the_smallest(t_stack **stack);
+int find_the_largest(t_stack **stack);
+
 #endif
