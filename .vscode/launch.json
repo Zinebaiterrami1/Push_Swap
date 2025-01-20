@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/zinebbb/Desktop/cursus-1337/Push_Swap",
-      "program": "/home/zinebbb/Desktop/cursus-1337/Push_Swap/build/Debug/outDebug",
+      "cwd": "/home/zinebbb/Desktop/cursus-1337/push_swap2",
+      "program": "/home/zinebbb/Desktop/cursus-1337/push_swap2/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
