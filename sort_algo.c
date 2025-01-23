@@ -6,11 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 15:57:26 by zait-err          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/01/23 15:28:20 by zait-err         ###   ########.fr       */
-=======
-/*   Updated: 2025/01/20 19:03:43 by zait-err         ###   ########.fr       */
->>>>>>> origin/main
+/*   Updated: 2025/01/23 16:08:41 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +62,6 @@ void algo_for4_elements(t_stack **a)
         }
 }
 
-<<<<<<< HEAD
-=======
-//algo for 5 elements,
->>>>>>> origin/main
 void algo_for5_elements(t_stack **a)
 {
     t_stack *b = NULL;
@@ -95,7 +87,3 @@ void algo_for5_elements(t_stack **a)
     algo_for4_elements(a);
     pa(a, &b);
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main
