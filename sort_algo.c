@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 15:57:26 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/13 00:29:44 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/01/23 15:28:20 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void algo_for4_elements(t_stack **a)
     int idx;
 
     idx = find_the_smallest(a);
+    
     if(idx == 0)
         algo_for3_elements(a);
     else if(idx == 1)
@@ -61,9 +62,28 @@ void algo_for4_elements(t_stack **a)
         }
 }
 
-//algo for 5 fama faw9,
-
-void algo_for5_elemts(t_stack **a)
+void algo_for5_elements(t_stack **a)
 {
-    
+    t_stack *b = NULL;
+    int smallest_idx = find_the_smallest(a);
+
+    if (smallest_idx <= 2)
+    {
+        while (smallest_idx > 0) //smallest_idx--
+        {
+            ra(a);
+            smallest_idx --;
+        }   
+    }
+    else
+    {
+        while (smallest_idx < 5) // smallest_idx++ < 5
+        {
+            rra(a);
+            smallest_idx++;
+        }
+    }
+    pb(a, &b);
+    algo_for4_elements(a);
+    pa(a, &b);
 }

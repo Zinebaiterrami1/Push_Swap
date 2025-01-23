@@ -92,6 +92,20 @@ int main()
     printf("-------------------for 5 elements---------------------\n");
     t_stack *f;
     f = NULL;
-    
+    t_stack *m = ft_lstnew(3); 
+    t_stack *p = ft_lstnew(4);
+    t_stack *c = ft_lstnew(1);
+    t_stack *d = ft_lstnew(5);
+    t_stack *z = ft_lstnew(2);
+    ft_lstadd_back(&f, m);
+    ft_lstadd_back(&f, p);
+    ft_lstadd_back(&f, c);
+    ft_lstadd_back(&f, d);
+    ft_lstadd_back(&f, z);
+    print_stack(f);
+    algo_for5_elements(&f);
+    print_stack(f);
+    printf("----------------------for 6 elements and more-----------------------\n");
+
 }
 
