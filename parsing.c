@@ -6,12 +6,17 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 00:55:31 by zait-err          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/01/22 18:53:40 by zait-err         ###   ########.fr       */
+=======
+/*   Updated: 2025/01/20 21:14:05 by zait-err         ###   ########.fr       */
+>>>>>>> origin/main
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"  //
 
+<<<<<<< HEAD
 //helper fct
 //check number
 int check_number(t_stack *a)
@@ -19,6 +24,15 @@ int check_number(t_stack *a)
     t_stack *tmp;
     
     tmp = a;
+=======
+//helper fcts
+//check number
+int check_number(t_stack **a)
+{
+    t_stack *tmp;
+    
+    tmp = *a;
+>>>>>>> origin/main
     while (tmp->next != NULL)
     {
         if(tmp->data >= INT_MAX && tmp->data <= INT_MIN)
@@ -28,6 +42,7 @@ int check_number(t_stack *a)
     return(0);
 }
 
+<<<<<<< HEAD
 int is_digit(const char *str)
 {
     int i;
@@ -48,11 +63,19 @@ int is_digit(const char *str)
 
 //check duplicates
 int check_dup(t_stack *a)
+=======
+//check duplicates
+int check_dup(t_stack **a)
+>>>>>>> origin/main
 {
     t_stack *check;
     t_stack *current;
 
+<<<<<<< HEAD
     current = a;
+=======
+    current = *a;
+>>>>>>> origin/main
     while (current->next != NULL)
     {
         check = current->next;
@@ -65,6 +88,7 @@ int check_dup(t_stack *a)
         current = current->next;
     }
     return(0);
+<<<<<<< HEAD
 }
 
 //handle empty input
@@ -117,4 +141,6 @@ t_stack *init_stack(int ac, char **av)
     if(check_dup(stack))
         print_error();
     return (stack);
+=======
+>>>>>>> origin/main
 }

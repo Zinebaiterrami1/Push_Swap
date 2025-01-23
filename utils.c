@@ -6,7 +6,11 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:19:09 by zait-err          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/01/23 13:17:23 by zait-err         ###   ########.fr       */
+=======
+/*   Updated: 2025/01/18 14:34:21 by zait-err         ###   ########.fr       */
+>>>>>>> origin/main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,3 +66,10 @@ int find_the_largest(t_stack **stack)
     return (max_idx);
 }
 
+<<<<<<< HEAD
+=======
+void init_stack()
+{
+    
+}
+>>>>>>> origin/main

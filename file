@@ -1,0 +1,8 @@
+Main parsing function: This will take int ac, char **av as parameters, where ac is the argument count, and av is the argument vector.
+
+Helper functions:
+
+A function to check if a number is within the valid integer range.
+A function to check for duplicates in the input.
+A function to handle empty input.
+A function to handle the format of each number (checking for leading zeros, ensuring only one sign, etc.).
