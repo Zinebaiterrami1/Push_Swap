@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:15:46 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/23 16:09:37 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/01/25 04:22:29 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
+#include <string.h>
+// #include "../MyLibft/libft.h"
 
 typedef struct s_list
 {
@@ -56,11 +58,12 @@ int find_the_largest(t_stack **stack);
 void algo_for5_elements(t_stack **a);
 void print_error(void);
 //parsing function
-int check_number(t_stack *a);
-int is_digit(const char *str);
+//int check_number(const char *str);
+int is_not_digit(const char *str);
 int check_dup(t_stack *a);
-int check_if_stack_empty(t_stack *a);
+int check_if_stack_empty(const char *a);
 void check_error(int ac, char **av);
+char	*ft_strjoin(char const *s1, char const *s2);
 t_stack *init_stack(int ac, char **av);
-
+char *join_args(int ac, char **av);
 #endif

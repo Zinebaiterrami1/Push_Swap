@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:13:32 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/23 15:54:42 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/01/25 04:25:31 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,23 @@ void print_error(void)
 int main(int argc, char **argv)
 {
     int i;
-    int data;
     char **s;
-    char *ss;
+    char *join;
+    t_stack *ss;
 
-    
     i = 1;
-    
-    while (argv[i])
+    if(argv[i][0] == '\0')
+        return (0);
+    check_error(argc, argv); 
+    join = 
+    ss = init_stack(argc, s);
+    if(argc == 4)
+        algo_for3_elements(&ss);
+    while(ss != NULL)
     {
-        check_error(argc, argv);
-        ss = ft_split(argv[i], ' ');
-        s = init_stack(argc, ss);
-        if(argc == 4)
-        {
-            algo_for3_elements(&s);
-        }
-        i++;
-    }
-    printf("------end of program--------");
+        printf("%d-> ", ss->data);
+        ss = ss-> next;
+   
+    }     printf("NULL");
+    printf("\n------end of program--------");
 }

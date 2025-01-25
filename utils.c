@@ -6,11 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:19:09 by zait-err          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/01/23 13:17:23 by zait-err         ###   ########.fr       */
-=======
-/*   Updated: 2025/01/18 14:34:21 by zait-err         ###   ########.fr       */
->>>>>>> origin/main
+/*   Updated: 2025/01/25 04:21:27 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +62,27 @@ int find_the_largest(t_stack **stack)
     return (max_idx);
 }
 
-<<<<<<< HEAD
-=======
-void init_stack()
+char *join_args(int ac, char **av)
 {
+    int i;
+    char *join;
+    char *tmp;
     
+    join = malloc(1);
+    i = 1;
+    join = "";
+    while (i < ac)
+    {
+        tmp = join;
+        join = ft_strjoin(join, av[i]);
+        free(tmp);
+        while (i < ac - 1)
+        {
+            tmp = join;
+            join = ft_strjoin(join, " ");
+            free(tmp);
+        }
+        i++;
+    }
+    return (join);
 }
->>>>>>> origin/main

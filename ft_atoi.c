@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 13:42:34 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/12 18:21:38 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/01/25 00:29:08 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ int ft_atoi(char *str)
     resultat = 0;
     sign = 1;
 
-    while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-    {
-        i++;
-    }
+    if(!str)
+        return (0);
     if(str[i] == '-' || str[i] == '+')
     {
         if(str[i] == '-')
@@ -37,5 +35,8 @@ int ft_atoi(char *str)
         resultat = resultat * 10 + (str[i] - 48);
         i++;
     }
-    return (sign * resultat);
+    resultat = sign * resultat;
+    if(resultat < INT_MIN || resultat > INT_MAX)
+        return (0);
+    return (resultat);
 }
