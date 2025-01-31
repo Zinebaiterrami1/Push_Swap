@@ -6,16 +6,16 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 13:42:34 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/25 00:29:08 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/01/27 14:46:35 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_atoi(char *str)
+int ft_atoi(const char *str)
 {
     int i;
-    int resultat;
+    long long resultat;
     int sign;
 
     i = 0;
@@ -37,6 +37,6 @@ int ft_atoi(char *str)
     }
     resultat = sign * resultat;
     if(resultat < INT_MIN || resultat > INT_MAX)
-        return (0);
+        print_error();
     return (resultat);
 }

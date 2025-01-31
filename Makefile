@@ -1,6 +1,6 @@
 NAME = push_swap
-CFLAGS = -Wall -Werror -Wextra
-#-fsanitize=address -g3
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g3
+
 CC = cc 
 SRCS = common_instructions.c\
 		ft_atoi.c\
@@ -11,7 +11,9 @@ SRCS = common_instructions.c\
 		push_swap.c\
 		sort_algo.c\
 		utils.c\
-		parsing.c
+		parsing.c\
+		ft_strjoin.c\
+		bubble_sort.c
 
 OBJECTS = $(SRCS:.c=.o)
 

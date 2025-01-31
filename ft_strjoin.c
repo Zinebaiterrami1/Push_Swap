@@ -6,11 +6,24 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 03:02:31 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/25 03:03:02 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/01/25 04:30:02 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

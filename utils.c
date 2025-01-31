@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:19:09 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/25 04:21:27 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/01/26 23:54:39 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,36 @@ int find_the_largest(t_stack **stack)
     }
     return (max_idx);
 }
+char	*ft_strdup(const char *src)
+{
+	size_t	len_src;
+	char	*arr;
+
+	len_src = ft_strlen(src);
+	arr = (char *)malloc((len_src + 1) * sizeof(char));
+	if (arr == NULL)
+		return (NULL);
+	ft_memcpy(arr, src, len_src + 1);
+	return (arr);
+}
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	size_t			i;
+	unsigned char	*char_dest;
+	unsigned char	*char_src;
+
+	if (!dest && !src)
+		return (NULL);
+	char_dest = (unsigned char *)dest;
+	char_src = (unsigned char *)src;
+	i = 0;
+	while (i < n)
+	{
+		char_dest[i] = char_src[i];
+		i++;
+	}
+	return (dest);
+}
 
 char *join_args(int ac, char **av)
 {
@@ -68,9 +98,8 @@ char *join_args(int ac, char **av)
     char *join;
     char *tmp;
     
-    join = malloc(1);
     i = 1;
-    join = "";
+    join = ft_strdup("");
     while (i < ac)
     {
         tmp = join;
@@ -81,6 +110,7 @@ char *join_args(int ac, char **av)
             tmp = join;
             join = ft_strjoin(join, " ");
             free(tmp);
+            break;
         }
         i++;
     }
