@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:15:46 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/31 18:20:57 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/01 00:19:25 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void algo_for4_elements(t_stack **a);
 int find_the_smallest(t_stack **stack);
 int find_the_largest(t_stack **stack);
 void algo_for5_elements(t_stack **a);
-t_stack** push_to_b(t_stack **a, int *arr_sorted);
+void    push_to_b(t_stack **a, int *arr_sorted, t_stack **b);
 void push_to_a(int size, t_stack **b, t_stack **a);
 void print_error(void);
 //parsing function

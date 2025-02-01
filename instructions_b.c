@@ -28,7 +28,7 @@ void rb(t_stack **b)
     t_stack *first;
     t_stack *last;
     
-    if(*b != NULL && (*b)->next != NULL)
+    if(*b != NULL && (*b)->next != NULL) //hna if b is empty or b fiha at least one element makhasoch idkhl
     {
         first = (*b)->next;
         last = ft_lstlast(*b);

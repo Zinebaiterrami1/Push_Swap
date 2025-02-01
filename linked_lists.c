@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 14:47:14 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/21 13:23:56 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/01 01:57:54 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int ft_lstsize(t_stack *lst)
     if(!lst)
         return (0);
     tmp = lst;
-    while (tmp->next != NULL)
+    while (tmp != NULL)
     {
         count++;
         tmp = tmp->next;

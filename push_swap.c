@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:13:32 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/31 18:14:48 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/01 01:50:43 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ int main(int argc, char **argv)
     char *join;
     t_stack *ss;
     t_stack *tmp;
+    t_stack *b;
     int *array;
     int size;
     int j;
     int *r;
     
     i = 1;
+    b = NULL;
     if(argc < 2 || argv[i][0] == '\0')
         return (0);
     check_error(argc, argv);
@@ -69,12 +71,13 @@ int main(int argc, char **argv)
     printf("\nafter processing-----\n");
         // printf("test\n");
     //algo_for3_elements(&ss);
-    push_to_b(&ss, r);
-    tmp = ss;
-    while(tmp != NULL)
+    t_stack *tmp1;
+    push_to_b(&ss, r, &b);
+    tmp1 = ss;
+    while(tmp1 != NULL)
     {
-        printf("%d-> ", tmp->data);
-        tmp = tmp-> next;
+        printf("%d-->", tmp1->data);
+        tmp1 = tmp1-> next;
     }printf("NULL");
     printf("\n------end of program--------");
 }

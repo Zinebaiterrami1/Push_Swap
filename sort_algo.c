@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 15:57:26 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/31 18:49:07 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/01 17:00:13 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,56 +95,62 @@ void algo_for5_elements(t_stack **a)
 }
 
 //algo for 6 elements and more
-t_stack** push_to_b(t_stack **a, int *arr_sorted)
+void    push_to_b(t_stack **a, int *arr_sorted, t_stack **b)
 {
-    t_stack *b;
+    if(!*a)
+        return;
     t_stack *tmp;
+    
     int size;
     int start;
     int end;
     
-    tmp = *a;
     start = 0;
     size = ft_lstsize(*a);
-    b = NULL;
     if(size <= 100)
         end = size / 6;
     else
         end = size / 14;
-    while (start < end - 1)
-    {
+    while (start <= end - 1)
+    {  
+        tmp = *a;
         while (tmp != NULL)
-        {
+        {   
             if(tmp->data <= arr_sorted[start])
-            {
-                pb(a, &b);
-                rb(&b);
+            {   printf("tessssst1\n");
+                pb(a, b);
+                rb(b);
                 start++;
                 end++;
             }
             else if(tmp->data <= arr_sorted[end])
-            {
-                pb(a, &b);
-                if (b && b->next && b->data < b->next->data)
-                    sb(&b);
+            {   printf("tessssst2\n");
+                pb(a, b);
+                if (*b && (*b)->next && (*b)->data < (*b)->next->data)
+                    sb(b);
                 start++;
                 end++;
             }
             else if(tmp->data > arr_sorted[end])
-            {
+            {   printf("tessssst3\n");
                 ra(a);
             }
             tmp = tmp->next;
         }
     }
-    push_to_a(size, &b, a);
-    return(a);
+    // t_stack *tmp_b = *b;
+    // while (tmp_b)
+    // {
+    //     printf("%d---->", tmp_b->data);
+    //     tmp_b = tmp_b->next;
+    // }
 }
 
 void push_to_a(int size, t_stack **b, t_stack **a)
 {
     int index;
-    
+    if(!*b || !*a)
+        return;
     index = find_the_largest(b);
     if(index < size/2)
     {
