@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 03:02:31 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/25 04:30:02 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:38:38 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*new_str;
 	size_t	i;
@@ -45,11 +45,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	}
 	while (s2[j])
-	{
-		new_str[i] = s2[j];
-		j++;
-		i++;
-	}
+		new_str[i++] = s2[j++];
+	free(s1);
 	new_str[i] = '\0';
 	return (new_str);
 }

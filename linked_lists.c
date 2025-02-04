@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 14:47:14 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/01 01:57:54 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:02:33 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,19 @@ t_stack	*ft_lstlast(t_stack *lst)
         tmp= tmp->next;
     }
     return(tmp);
+}
+
+void	ft_lstclear(t_stack **lst)
+{
+	t_stack	*ptr;
+	t_stack	*current;
+
+	current = *lst;
+	while (current != NULL)
+	{
+		ptr = current->next;
+		free(current);
+		current = ptr;
+	}
+	*lst = NULL;
 }

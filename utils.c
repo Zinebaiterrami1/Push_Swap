@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:19:09 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/26 23:54:39 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:41:36 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int find_the_smallest(t_stack **stack)
 
 int find_the_largest(t_stack **stack)
 {
-     t_stack *tmp;
+    t_stack *tmp;
     int max_val;
     int max_idx;
     int i;
@@ -96,20 +96,15 @@ char *join_args(int ac, char **av)
 {
     int i;
     char *join;
-    char *tmp;
     
     i = 1;
     join = ft_strdup("");
     while (i < ac)
     {
-        tmp = join;
         join = ft_strjoin(join, av[i]);
-        free(tmp);
         while (i < ac - 1)
         {
-            tmp = join;
             join = ft_strjoin(join, " ");
-            free(tmp);
             break;
         }
         i++;

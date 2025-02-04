@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 00:55:31 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/27 16:01:46 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/02 09:25:45 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,13 @@ t_stack *init_stack(char **av)
     //printf("\nValue before enteering the loop %s\n", av[j]);
     while (av[j])
     {
-        printf("\nDebugging: %s\n", av[j]);
+        //printf("\nDebugging: %s\n", av[j]);
         data = ft_atoi(av[j]);
         //printf("\nValue after enteering the loop %d\n", data);
         new = ft_lstnew(data);
         if(!new)
             exit(1);
-        printf("{%d}\n", new->data);
+        //printf("{%d}\n", new->data);
         ft_lstadd_back(&stack, new);
         j++;
     }

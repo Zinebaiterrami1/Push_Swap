@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 15:57:26 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/01 17:00:13 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:07:15 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void algo_for2_elements(t_stack **a)
 {
     if(!*a || !(*a)->next)
         return ;
-    if((*a)->next == NULL)
+    if(                   (*a)->next == NULL)
         return;
     if((*a)->data > (*a)->next->data)
         sa(a);
@@ -99,74 +99,89 @@ void    push_to_b(t_stack **a, int *arr_sorted, t_stack **b)
 {
     if(!*a)
         return;
-    t_stack *tmp;
-    
     int size;
     int start;
     int end;
     
     start = 0;
     size = ft_lstsize(*a);
+    printf("size of the stack : %d\n", size);
     if(size <= 100)
         end = size / 6;
     else
         end = size / 14;
-    while (start <= end - 1)
-    {  
-        tmp = *a;
-        while (tmp != NULL)
+    while (*a)
+    {   
+        if((*a)->data <= arr_sorted[start])
         {   
-            if(tmp->data <= arr_sorted[start])
-            {   printf("tessssst1\n");
-                pb(a, b);
-                rb(b);
-                start++;
-                end++;
-            }
-            else if(tmp->data <= arr_sorted[end])
-            {   printf("tessssst2\n");
-                pb(a, b);
-                if (*b && (*b)->next && (*b)->data < (*b)->next->data)
-                    sb(b);
-                start++;
-                end++;
-            }
-            else if(tmp->data > arr_sorted[end])
-            {   printf("tessssst3\n");
-                ra(a);
-            }
-            tmp = tmp->next;
+            pb(a, b);
+            rb(b);
+            start++;
+            end++;
+        }
+        else if((*a)->data <= arr_sorted[end])
+        {   
+            pb(a, b);
+            if (*b && (*b)->next && (*b)->data < (*b)->next->data)
+                sb(b);
+            start++;
+            end++;
+        }
+        else if((*a)->data > arr_sorted[end])
+        {   
+            ra(a);
         }
     }
-    // t_stack *tmp_b = *b;
+    t_stack *tmp_b = *b;
+    while (tmp_b)
+    {
+        printf("%d---->", tmp_b->data);
+        tmp_b = tmp_b->next;
+    }
+    //phase_2(a, b);
+    //t_stack *tmp_b = *a;
+    // printf("new stack sorted:\n");
     // while (tmp_b)
     // {
     //     printf("%d---->", tmp_b->data);
     //     tmp_b = tmp_b->next;
-    // }
+    // }printf("NULL");
 }
 
-void push_to_a(int size, t_stack **b, t_stack **a)
+void	phase_2(t_stack **a, t_stack **b)
 {
-    int index;
-    if(!*b || !*a)
-        return;
-    index = find_the_largest(b);
-    if(index < size/2)
+	int	biggest;
+
+	while (*b)
+	{
+		biggest = find_the_largest(b);
+		while (biggest != 0  && biggest != ft_lstsize(*b))
+		{
+			if (biggest < ft_lstsize(*b) / 2)
+            {
+				rb(b);
+                biggest--;             
+            }
+			else
+            {
+                rrb(b);
+                biggest++;
+            }
+		}
+		pa(a, b);
+	}
+}
+
+int is_sorted(t_stack **a)
+{
+    t_stack *tmp;
+
+    tmp = *a;
+    while (tmp && tmp->next && tmp->data < tmp->next->data)
     {
-        while (index > 0)
-        {
-            rb(b);
-            index --;
-        }
+        tmp = tmp->next;
     }
-    else
-    {
-        while (index >= size/2)
-        {
-            rra(b);
-            index++;
-        }
-    }
-    pa(a, b);
+    if(tmp->next == NULL)
+        return (0);
+    return (1);
 }
