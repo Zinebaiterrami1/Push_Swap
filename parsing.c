@@ -6,13 +6,12 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 00:55:31 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/02 09:25:45 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/07 19:38:26 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//helper fct
 int is_not_digit(const char *str)
 {
     int i;
@@ -20,8 +19,8 @@ int is_not_digit(const char *str)
     i = 0;
     if(str[i] == '-' || str[i] == '+')
         i++;
-    if(str[i] == '\0')
-        return (0);
+    // if(str[i] == '\0')
+    //     return (0);
     while (str[i])
     {
         if(str[i] < '0' || str[i] > '9')
@@ -30,17 +29,14 @@ int is_not_digit(const char *str)
     }
     return (1);
 }
-//degits or dup ==== error
-//main. split . check---parsing. init stack. atoi . hto f node.
 
-//check duplicates
 int check_dup(t_stack *a)
 {
     t_stack *check;
     t_stack *current;
 
     current = a;
-    while (current) // current->next != NULL
+    while (current)
     {
         check = current->next;
         while (check)
@@ -54,23 +50,43 @@ int check_dup(t_stack *a)
     return(1);
 }
 
-//no parameters , 
-void check_error(int ac, char **av)
+int check_if_args_empty(char *av)
+{
+    // if(av[1] == '\0')
+    //     return (1);
+    int i;
+
+    i = 1;
+    while (av[i])
+    {
+        if(av[i] == '\0' || !av[i])
+            return (1);
+        i++;
+    }
+    return (0);
+}
+
+void  check_error(int ac, char **av)
 {
     int j;
     
     j = 1;
     if(ac == 1)
         exit(1);
+    printf("av : %s\n", av[0]);
+    // if(av[0] == NULL)
+    //     print_error();
     while (av[j])
-    {
-        if(!is_not_digit(av[j]))
-            print_error();
+    {    printf("fdgdfgfdg");
+        if(!is_not_digit(av[j]) || !check_if_args_empty(av[j]))
+        {
+           printf("\n test av = %s \n\n",av[j]);
+                    printf("2\n");
+            print_error();}
         j++;
     }
 }
 
-//stack init
 t_stack *init_stack(char **av)
 {
     int data;
@@ -80,20 +96,17 @@ t_stack *init_stack(char **av)
     
     j = 0; 
     stack = NULL;
-    //printf("\nValue before enteering the loop %s\n", av[j]);
     while (av[j])
     {
-        //printf("\nDebugging: %s\n", av[j]);
         data = ft_atoi(av[j]);
-        //printf("\nValue after enteering the loop %d\n", data);
         new = ft_lstnew(data);
         if(!new)
             exit(1);
-        //printf("{%d}\n", new->data);
         ft_lstadd_back(&stack, new);
-        j++;
+        j++; 
     }
-    if(check_dup(stack) == 0)
-        print_error();
+    if(check_dup(stack) == 0){
+                printf("3\n");
+        print_error();}
     return (stack);
 }

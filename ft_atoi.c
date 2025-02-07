@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 13:42:34 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/27 14:46:35 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/06 22:05:26 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int ft_atoi(const char *str)
         i++;
     }
     resultat = sign * resultat;
-    if(resultat < INT_MIN || resultat > INT_MAX)
-        print_error();
+    if(resultat < INT_MIN || resultat > INT_MAX){
+        printf("1\n");
+        print_error();}
     return (resultat);
 }

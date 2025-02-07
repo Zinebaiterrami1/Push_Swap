@@ -66,15 +66,7 @@ int check_dup(t_stack *a)
 
 //handle empty input
 
-int check_if_stack_empty(t_stack *a)
-{
-    t_stack *tmp;
 
-    tmp = a;
-    if(!tmp)
-        return (1);
-    return (0);
-}
 //algo for >= 6 numbers
 void algo_for6_elements_ndmore(t_stack **a, int *arr_sorted)
 {

@@ -6,13 +6,13 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:23:24 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/21 14:18:15 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/05 23:33:02 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int ft_lenword(const char *s, char c)
+int ft_lenword(const char *s, char c)
 {
     int i;
     int j;
@@ -31,7 +31,7 @@ static int ft_lenword(const char *s, char c)
     return (j);
 }
 
-static int count_word(const char *s, char c)
+int count_word(const char *s, char c)
 {
     int i;
     int check;
@@ -54,7 +54,7 @@ static int count_word(const char *s, char c)
     return (wc);
 }
 
-static char *Mystrdup(const char *s, char c)
+char *Mystrdup(const char *s, char c)
 {
     char *array;
     size_t i;
@@ -79,7 +79,7 @@ static char *Mystrdup(const char *s, char c)
     return (array);
 }
 
-static char	**ft_free(char **s)
+char	**ft_free(char **s)
 {
 	int	i;
 

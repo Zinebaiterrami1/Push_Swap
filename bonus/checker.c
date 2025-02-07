@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:07:17 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/04 14:56:07 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/06 22:06:33 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void check_move(char *instruction, t_stack **a, t_stack **b)
         rr(a, b);
     else if(ft_strcmp(instruction, "rrr\n") == 0)
         rrr(a, b);
-    else 
-        print_error();
+    else {
+        print_error();}
 }
 int is_sorted(t_stack **a)
 {
@@ -68,9 +68,10 @@ int main(int argc, char **argv)
     char **s;
     t_stack *ss;
     char *join;
-    char *r = NULL;
+    char *r;
     
     b = NULL;
+    r = NULL;
     if(argc < 2 || argv[1][0] == '\0')
         return (0);
     check_error(argc, argv);
@@ -88,5 +89,7 @@ int main(int argc, char **argv)
         write(1, "OK!\n", 4);
     else
         write(1, "KO!\n", 4);
+    free(ss);
+    free(join);
 }       
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              

@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 15:57:26 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/03 16:07:15 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/07 16:06:34 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,12 +105,12 @@ void    push_to_b(t_stack **a, int *arr_sorted, t_stack **b)
     
     start = 0;
     size = ft_lstsize(*a);
-    printf("size of the stack : %d\n", size);
     if(size <= 100)
         end = size / 6;
     else
         end = size / 14;
-    while (*a)
+    // printf("\n size of stack  == %d ,end ==%d \n",size,end);
+    while (end < size && *a)
     {   
         if((*a)->data <= arr_sorted[start])
         {   
@@ -126,32 +126,56 @@ void    push_to_b(t_stack **a, int *arr_sorted, t_stack **b)
                 sb(b);
             start++;
             end++;
+
         }
         else if((*a)->data > arr_sorted[end])
         {   
             ra(a);
         }
     }
-    t_stack *tmp_b = *b;
-    while (tmp_b)
+    while(*a)
     {
-        printf("%d---->", tmp_b->data);
-        tmp_b = tmp_b->next;
+        pb(a, b);
     }
-    //phase_2(a, b);
-    //t_stack *tmp_b = *a;
-    // printf("new stack sorted:\n");
+
+    // t_stack *tmp_b = *b;
+    // printf("\nnew stack sorted (b):\n");
     // while (tmp_b)
     // {
-    //     printf("%d---->", tmp_b->data);
+    //     printf("%d\n", tmp_b->data);
     //     tmp_b = tmp_b->next;
-    // }printf("NULL");
+    // }
+    // printf("NULL");
+
+    // printf("\ncheck if any nodes left in stack a:\n");
+    // t_stack *tmp_z = *a;
+    // printf("\njust check:\n");
+    // while (tmp_z)
+    // {
+    //     printf("%d---->", tmp_z->data);
+    //     tmp_z = tmp_z->next;
+    // }printf("NULL\n");
+    
+    phase_2(a, b);               
+    // t_stack *tmp_c = *a;
+    // printf("\nnew stack sorted:\n");
+    // while (tmp_c)
+    // {
+    //     printf("%d---->", tmp_c->data);
+    //     tmp_c = tmp_c->next;
+    // }printf("NULL\n");
+    // tmp_c = *a;
+    // while (tmp_c)
+    // {
+    //     printf("%d\n", tmp_c->data);
+    //     tmp_c = tmp_c->next;
+    // }printf("NULL\n");
 }
 
 void	phase_2(t_stack **a, t_stack **b)
 {
 	int	biggest;
-
+    
 	while (*b)
 	{
 		biggest = find_the_largest(b);

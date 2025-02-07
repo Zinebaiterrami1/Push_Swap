@@ -124,73 +124,111 @@ void	free_split(char **str_str)
 	free(str_str);
 }
 
-int main(int argc, char **argv)
+int *sort_array(int *array, int ac, char **s)
 {
-    int i;
-    char **s;
-    char *join;
-    t_stack *ss;
-    t_stack *tmp;
-    //t_stack *b;
-    int *array;
     int size;
     int j;
     int *r;
-    
-    i = 1;
-    //b = NULL;
-    if(argc < 2 || argv[i][0] == '\0')
-        return (0);
-    printf("testttttttttttttttttttttttttt\n");
-    check_error(argc, argv); 
-    join = join_args(argc, argv);
-    size = argc - 1;
-    array = malloc(size * sizeof(int));
+
+    size = ac - 1;
+    j = 0;
+    int count = 0;
+    while( s[count])
+        count ++;
+    // printf("ac == %d , count = %d \n",ac, count);
+    array = malloc(count * sizeof(int));
     if(!array)
         return (0);
-    j = 0;
-    printf("joining args : %s\n", join); 
-    s = ft_split(join, ' '); 
-    // for(int k = 0; k <= 100; k++)
-    // {
-    //     printf("split [%d]:%s\t ", k,s[k]);
-    // }
-    while (s[j])
+    while (s[j] )
     {   
+        // printf("s = %s \n",s[j]);
         array[j] = ft_atoi(s[j]);
         j++;
     }
     r = ft_bubble_sort(array, size);
-    j = 0;
-    while (j < size)
-    {   
-        printf("[%d]\t", r[j]);
-        j++;
+    return(r);
+}
+
+int main(int argc, char **argv)
+{
+   // int i;
+    char **s;
+    char *join;
+    t_stack *ss;
+   // t_stack *tmp;
+   // t_stack *b;
+    int *array;
+    //int size;
+   // int j;
+    int *r;
+    
+    //i = 1;
+    //b = NULL;
+    array = 0;
+    if(argc < 2)
+        return (0);
+    
+    join = join_args(argc, argv);
+    //size = argc - 1;
+   // printf("size of input : %d\n", size);
+    // array = malloc(size * sizeof(int));
+    // if(!array)
+    //     return (0);
+   // j = 0;
+   // printf("joining args : %s\n", join); 
+    s = ft_split(join, ' '); 
+    int k = 0;
+    while (s[k])
+    {
+        printf("-----> %s \n",s[k]);
+        k++;
     }
+    
+    // for(int k = 0; k <= 100; k++)
+    // {
+    //     printf("split [%d]:%s\t ", k,s[k]);
+    // }
+    // while (s[j])
+    // {   
+    //     array[j] = ft_atoi(s[j]);
+    //     j++;
+    // }
+   // r = ft_bubble_sort(array, size);
+    check_error(argc, s);
+    r = sort_array(array, argc, s);
+   // j = 0;
+    // while (j < size)
+    // {   
+    //     printf("[%d]\t", r[j]);
+    //     j++;
+    // }
     ss = init_stack(s);
     int u = is_sorted(&ss);
     if(u == 0)
-        exit(1);
-    tmp = ss;
-    printf("\nbefore processing-----\n");
-    while(tmp != NULL)
-    {
-        printf("%d-> ", tmp->data);
-        tmp = tmp-> next;
-    }printf("NULL");
-    printf("\nafter processing-----\n");
-    // printf("test\n");
+        exit(0);
+    // t_stack *tmp = ss;
+    // printf("\nbefore processing-----\n");
+    // while(tmp != NULL)call of silence
+    // {
+    //     printf("%d-> ", tmp->data);
+    //     tmp = tmp-> next;
+    // }printf("NULL");
+//     printf("\nafter processing-----\n");
+//     printf("test\n");
+//     algo_for3_elements(&ss);
+//    t_stack *tmp1;
     algo_for3_elements(&ss);
-    t_stack *tmp1;
     //push_to_b(&ss, r, &b);
-    tmp1 = ss;
-    while(tmp1 != NULL)
-    {
-        printf("%d--->", tmp1->data);
-        tmp1 = tmp1-> next;
-    }printf("NULL");
+    // tmp1 = ss;
+    // while(tmp1 != NULL)
+    // {
+    //     printf("%d--->", tmp1->data);
+    //     tmp1 = tmp1-> next;
+    // }printf("NULL");
     ft_lstclear(&ss);
     free(r);
     free(join);
-    printf("\n------end of program--------");
+    ft_free(s);
+    //printf("\n------end of program--------");
 }
+//./push_swap 0 1 2 l1 3 

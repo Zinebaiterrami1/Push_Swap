@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:15:46 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/04 16:38:59 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/05 23:33:16 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void print_error(void);
 //int check_number(const char *str);
 int is_not_digit(const char *str);
 int check_dup(t_stack *a);
-// int check_if_stack_empty(const char *a);
+int check_if_args_empty(char *av);
 void check_error(int ac, char **av);
 char	*ft_strjoin(char *s1, char *s2);
 t_stack *init_stack(char **av);
@@ -69,5 +69,5 @@ int *ft_bubble_sort(int arr[], int n);
 void	phase_2(t_stack **a, t_stack **b);
 int is_sorted(t_stack **a);
 void	ft_lstclear(t_stack **lst);
-
+char **ft_free(char **s);
 #endif
