@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:15:46 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/05 23:33:16 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/12 12:44:55 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ void algo_for5_elements(t_stack **a);
 void    push_to_b(t_stack **a, int *arr_sorted, t_stack **b);
 void	phase_2(t_stack **a, t_stack **b);
 void print_error(void);
-//parsing function
-//int check_number(const char *str);
 int is_not_digit(const char *str);
 int check_dup(t_stack *a);
 int check_if_args_empty(char *av);

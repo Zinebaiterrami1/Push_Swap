@@ -156,19 +156,20 @@ int main(int argc, char **argv)
     char *join;
     t_stack *ss;
    // t_stack *tmp;
-   // t_stack *b;
+   t_stack *b;
     int *array;
     //int size;
    // int j;
     int *r;
     
     //i = 1;
-    //b = NULL;
+    b = NULL;
     array = 0;
     if(argc < 2)
         return (0);
     
     join = join_args(argc, argv);
+   // printf("%s join args\n", join);
     //size = argc - 1;
    // printf("size of input : %d\n", size);
     // array = malloc(size * sizeof(int));
@@ -177,12 +178,12 @@ int main(int argc, char **argv)
    // j = 0;
    // printf("joining args : %s\n", join); 
     s = ft_split(join, ' '); 
-    int k = 0;
-    while (s[k])
-    {
-        printf("-----> %s \n",s[k]);
-        k++;
-    }
+    // int k = 0;
+    // while (s[k])
+    // {
+    //     printf("-----> %s \n",s[k]);
+    //     k++;
+    // }
     
     // for(int k = 0; k <= 100; k++)
     // {
@@ -196,16 +197,30 @@ int main(int argc, char **argv)
    // r = ft_bubble_sort(array, size);
     check_error(argc, s);
     r = sort_array(array, argc, s);
-   // j = 0;
+    // j = 0;
     // while (j < size)
     // {   
     //     printf("[%d]\t", r[j]);
     //     j++;
     // }
     ss = init_stack(s);
-    int u = is_sorted(&ss);
-    if(u == 0)
-        exit(0);
+    int count  = 0;
+    while(s[count])
+        count ++;
+    printf("\n count = %d \n",count);
+    if(count == 2)
+        algo_for2_elements(&ss);
+    else if(count == 3)
+        algo_for3_elements(&ss);
+    else if(count == 4)
+        algo_for4_elements(&ss);
+    else if(count == 5)
+        algo_for5_elements(&ss);
+    else
+        push_to_b(&ss, r, &b);
+    // int u = is_sorted(&ss);
+    // if(u == 0)
+    //     exit(0);
     // t_stack *tmp = ss;
     // printf("\nbefore processing-----\n");
     // while(tmp != NULL)call of silence
@@ -213,18 +228,18 @@ int main(int argc, char **argv)
     //     printf("%d-> ", tmp->data);
     //     tmp = tmp-> next;
     // }printf("NULL");
-//     printf("\nafter processing-----\n");
-//     printf("test\n");
-//     algo_for3_elements(&ss);
-//    t_stack *tmp1;
-    algo_for3_elements(&ss);
+    //printf("\nafter processing-----\n");
+    //printf("test\n");
+    //algo_for3_elements(&ss);
+    t_stack *tmp1;
+    //algo_for4_elements(&ss);
     //push_to_b(&ss, r, &b);
-    // tmp1 = ss;
-    // while(tmp1 != NULL)
-    // {
-    //     printf("%d--->", tmp1->data);
-    //     tmp1 = tmp1-> next;
-    // }printf("NULL");
+    tmp1 = ss;
+    while(tmp1 != NULL)
+    {
+        printf("%d--->", tmp1->data);
+        tmp1 = tmp1-> next;
+    }printf("NULL");
     ft_lstclear(&ss);
     free(r);
     free(join);

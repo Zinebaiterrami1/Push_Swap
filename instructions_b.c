@@ -6,13 +6,12 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 13:42:54 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/05 13:42:55 by zait-err         ###   ########.fr       */
-/*                           void ft_swap(int *a, int *b)                                                 */
+/*   Updated: 2025/02/12 12:46:24 by zait-err         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//swap a , swap the first two nodes, lwla katwli taniya wl3aks
 void sb(t_stack **b)
 {
     
@@ -28,18 +27,17 @@ void rb(t_stack **b)
     t_stack *first;
     t_stack *last;
     
-    if(*b != NULL && (*b)->next != NULL) //hna if b is empty or b fiha at least one element makhasoch idkhl
+    if(*b != NULL && (*b)->next != NULL)
     {
         first = (*b)->next;
         last = ft_lstlast(*b);
-        last->next = *b; //hna last iwli ippointi 3l adakchi li kan f lwal dstack
+        last->next = *b;
         (*b)->next = NULL;
         *b = first;
         write(1, "rb\n", 3);
     }
 }
 
-//void *rra()
 void rrb(t_stack **b)
 {
     t_stack *tmp;

@@ -6,13 +6,11 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:19:09 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/04 16:41:36 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/12 12:42:13 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-//fct to have index of the all elements in, stack 
 
 int find_the_smallest(t_stack **stack)
 {
@@ -61,6 +59,7 @@ int find_the_largest(t_stack **stack)
     }
     return (max_idx);
 }
+
 char	*ft_strdup(const char *src)
 {
 	size_t	len_src;
@@ -73,6 +72,7 @@ char	*ft_strdup(const char *src)
 	ft_memcpy(arr, src, len_src + 1);
 	return (arr);
 }
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t			i;

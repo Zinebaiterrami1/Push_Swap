@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:48:25 by zait-err          #+#    #+#             */
-/*   Updated: 2025/01/10 21:07:46 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/12 12:46:36 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void ft_swap(int *a, int *b)
     *a = *b;
     *b = tmp;
 }
-//swap a , swap the first two nodes, lwla katwli taniya wl3aks
+
 void sa(t_stack **a)
 {
     
@@ -40,14 +40,13 @@ void ra(t_stack **a)
     {
         first = (*a)->next;
         last = ft_lstlast(*a);
-        last->next = *a; //hna last iwli ippointi 3l adakchi li kan f lwal dstack
+        last->next = *a;
         (*a)->next = NULL;
         *a = first;
         write(1, "ra\n", 3);
     }
 }
 
-//void *rra()
 void rra(t_stack **a)
 {
     t_stack *tmp;
