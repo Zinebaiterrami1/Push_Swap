@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:15:46 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/12 12:44:55 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:51:41 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ char	**ft_split(const char *s, char c);
 int ft_atoi(const char *str);
 void algo_for2_elements(t_stack **a);
 void algo_for3_elements(t_stack **a);
-void algo_for4_elements(t_stack **a);
+void algo_for4_elements(t_stack **a, t_stack **b);
 int find_the_smallest(t_stack **stack);
 int find_the_largest(t_stack **stack);
-void algo_for5_elements(t_stack **a);
-void    push_to_b(t_stack **a, int *arr_sorted, t_stack **b);
+void algo_for5_elements(t_stack **a, t_stack **b);
+void    push_to_b(t_stack **a, int *arr_sorted, t_stack **b, int end);
 void	phase_2(t_stack **a, t_stack **b);
 void print_error(void);
 int is_not_digit(const char *str);
@@ -68,4 +68,7 @@ void	phase_2(t_stack **a, t_stack **b);
 int is_sorted(t_stack **a);
 void	ft_lstclear(t_stack **lst);
 char **ft_free(char **s);
+void	incr_segment(int *start, int *end, int size);
+void    algo(t_stack **a, int *sorted_arr, t_stack **b);
+void call_algo_functions(int count, t_stack **ss, int *r, t_stack **b);
 #endif

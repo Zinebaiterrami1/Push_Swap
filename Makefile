@@ -12,6 +12,7 @@ SRCS = common_instructions.c\
 		push_swap.c\
 		sort_algo.c\
 		utils.c\
+		utils1.c\
 		parsing.c\
 		ft_strjoin.c\
 		main.c\

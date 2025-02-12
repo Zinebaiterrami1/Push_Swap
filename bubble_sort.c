@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 19:20:32 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/12 12:52:07 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:22:52 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int *ft_bubble_sort(int arr[], int n)
     {
         j = 0;
         while (j < n - i - 1)
-        {   printf("tetstte");
+        {  
             if(arr[j] > arr[j + 1])
             {
                 ft_swap(&arr[j], &arr[j + 1]);
