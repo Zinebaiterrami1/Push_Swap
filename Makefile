@@ -30,7 +30,6 @@ BONUS_SRCS = bonus/checker.c\
              linked_lists.c\
              ft_strjoin.c\
              bubble_sort.c\
-			 push_swap.c\
 			 ft_atoi.c
 
 OBJECTS = $(SRCS:.c=.o)
@@ -42,7 +41,9 @@ all : $(NAME)
 $(NAME) : $(OBJECTS)
 	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
-bonus :$(BONUS_OBJECTS)
+bonus :	$(BONUS_NAME)
+
+$(BONUS_NAME) : $(BONUS_OBJECTS)
 	$(CC) $(CFLAGS) $(BONUS_SRCS) -o $(BONUS_NAME)
 
 clean :

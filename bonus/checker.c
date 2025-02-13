@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:07:17 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/06 22:06:33 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/13 21:33:35 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,45 @@ int is_sorted(t_stack **a)
     return (1);
 }
 
+void print_error(void)
+{
+    write(2, "Error\n", 6);
+    exit(1);
+}
+
+int check_espace(char *av)
+{
+	int size;
+	int i;
+	int count_esp;
+
+	i = 0;
+	count_esp = 0;
+	size = ft_strlen(av);
+	while(av[i])
+	{
+		if(av[i] == ' ')
+			count_esp++;
+		i++;
+	}
+	if(count_esp == size)
+		return (1);
+	else 
+	    return (0);
+}
+
+void check_empty(char **av)
+{
+	int i = 1;
+	while(av[i])
+	{
+		if(!av[i] || av[i][0] == '\0' || check_espace(av[i]) == 1)
+			print_error();
+		i++;
+	}
+	
+}
+
 int main(int argc, char **argv)
 {
     t_stack *b;
@@ -72,11 +111,12 @@ int main(int argc, char **argv)
     
     b = NULL;
     r = NULL;
-    if(argc < 2 || argv[1][0] == '\0')
+    if(argc < 2)
         return (0);
-    check_error(argc, argv);
+    check_empty(argv);
     join = join_args(argc, argv);
     s = ft_split(join, ' ');
+    check_error(argc, s);
     ss = init_stack(s);
     r = get_next_line(0);
     while(r != NULL)
@@ -91,5 +131,6 @@ int main(int argc, char **argv)
         write(1, "KO!\n", 4);
     free(ss);
     free(join);
+    ft_free(s);
 }       
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+

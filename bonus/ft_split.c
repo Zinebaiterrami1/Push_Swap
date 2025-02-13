@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:23:01 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/05 23:32:44 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/13 13:38:57 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static char *Mystrdup(const char *s, char c)
     return (array);
 }
 
-static char	**ft_free(char **s)
+char	**ft_free(char **s)
 {
 	int	i;
 

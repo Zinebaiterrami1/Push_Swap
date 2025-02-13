@@ -13,14 +13,12 @@
 #include "push_swap_bonus.h"
 #include "../push_swap.h"
 
-//swap a , swap the first two nodes, lwla katwli taniya wl3aks
 void sb(t_stack **b)
 {
     
     if(*b != NULL && (*b)->next != NULL)
     {
         ft_swap(&(*b)->data, &(*b)->next->data);
-        write(1, "sb\n", 3);
     }
 }
 
@@ -29,14 +27,13 @@ void rb(t_stack **b)
     t_stack *first;
     t_stack *last;
     
-    if(*b != NULL && (*b)->next != NULL) //hna if b is empty or b fiha at least one element makhasoch idkhl
+    if(*b != NULL && (*b)->next != NULL)
     {
         first = (*b)->next;
         last = ft_lstlast(*b);
-        last->next = *b; //hna last iwli ippointi 3l adakchi li kan f lwal dstack
+        last->next = *b;
         (*b)->next = NULL;
         *b = first;
-        write(1, "rb\n", 3);
     }
 }
 
@@ -58,7 +55,6 @@ void rrb(t_stack **b)
         last->next = *b;
         *b = last;
         tmp->next = NULL;
-        write(1, "rrb\n", 4);
     }
 }
 
@@ -72,5 +68,4 @@ void pb(t_stack **a, t_stack **b)
     ft_lstadd_front(b, ft_lstnew((*a)->data));
     free(*a);
     *a = tmp;
-    write(1, "pb\n", 3);
 }

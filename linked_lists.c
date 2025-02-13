@@ -6,86 +6,72 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 14:47:14 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/04 16:02:33 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/13 12:50:22 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-t_stack *ft_lstnew(int data)
+t_stack	*ft_lstnew(int data)
 {
-    t_stack *new_element;
-    new_element = malloc(sizeof(t_stack));
-    if(!new_element)
-        return (NULL);
-    new_element->data = data;
-    new_element->next = NULL;
-    return (new_element);
+	t_stack	*new_element;
+
+	new_element = malloc(sizeof(t_stack));
+	if (!new_element)
+		return (NULL);
+	new_element->data = data;
+	new_element->next = NULL;
+	return (new_element);
 }
 
-int ft_lstsize(t_stack *lst)
+int	ft_lstsize(t_stack *lst)
 {
-    int count;
-    t_stack *tmp;
-    
-    count = 0;
-    if(!lst)
-        return (0);
-    tmp = lst;
-    while (tmp != NULL)
-    {
-        count++;
-        tmp = tmp->next;
-    }
-    return(count);    
+	int		count;
+	t_stack	*tmp;
+
+	count = 0;
+	if (!lst)
+		return (0);
+	tmp = lst;
+	while (tmp != NULL)
+	{
+		count++;
+		tmp = tmp->next;
+	}
+	return (count);
 }
 
 void	ft_lstadd_front(t_stack **stack, t_stack *new)
 {
-    if(!new || !stack)
-        return;
-    new->next= *stack;
-    *stack = new;
+	if (!new || !stack)
+		return ;
+	new->next = *stack;
+	*stack = new;
 }
 
-void 	ft_lstadd_back(t_stack **stack, t_stack *new)
+void	ft_lstadd_back(t_stack **stack, t_stack *new)
 {
-    t_stack *last;
-    if(!new || !stack)
-        return;
-    last = ft_lstlast(*stack);
-    if(!last)
-        *stack = new;
-    else
-        last->next = new;    
+	t_stack	*last;
+
+	if (!new || !stack)
+		return ;
+	last = ft_lstlast(*stack);
+	if (!last)
+		*stack = new;
+	else
+		last->next = new;
 }
 
 t_stack	*ft_lstlast(t_stack *lst)
 {
-    t_stack *tmp;
-    
-    if(!lst)
-        return (NULL);
-    tmp = lst;
-    while (tmp->next != NULL)
-    {
-        tmp= tmp->next;
-    }
-    return(tmp);
-}
+	t_stack	*tmp;
 
-void	ft_lstclear(t_stack **lst)
-{
-	t_stack	*ptr;
-	t_stack	*current;
-
-	current = *lst;
-	while (current != NULL)
+	if (!lst)
+		return (NULL);
+	tmp = lst;
+	while (tmp->next != NULL)
 	{
-		ptr = current->next;
-		free(current);
-		current = ptr;
+		tmp = tmp->next;
 	}
-	*lst = NULL;
+	return (tmp);
 }
