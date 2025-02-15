@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:15:46 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/12 16:51:41 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/15 13:58:31 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef struct s_list
 {
 	int				data;
+	int				index;
 	struct s_list	*next;
 }					t_stack;
 
@@ -73,4 +74,8 @@ void				incr_segment(int *start, int *end, int size);
 void				algo(t_stack **a, int *sorted_arr, t_stack **b);
 void				call_algo_functions(int count, t_stack **ss, int *r,
 						t_stack **b);
+int					calc_count(char **sp);
+void				check_empty(char **av);
+int					check_espace(char *av);
+void				check_overflow(char **argv);
 #endif

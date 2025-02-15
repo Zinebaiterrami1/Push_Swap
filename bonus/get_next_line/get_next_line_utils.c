@@ -6,12 +6,12 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:16:24 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/04 00:40:02 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/14 15:59:34 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "../../push_swap.h"
+#include "get_next_line.h"
 
 size_t	ft_strlen1(const char *s)
 {

@@ -15,7 +15,7 @@ SRCS = common_instructions.c\
 		utils1.c\
 		parsing.c\
 		ft_strjoin.c\
-		main.c\
+		utils2.c\
 		bubble_sort.c
 
 BONUS_SRCS = bonus/checker.c\
@@ -25,7 +25,9 @@ BONUS_SRCS = bonus/checker.c\
              bonus/ft_split.c\
              bonus/get_next_line/get_next_line.c\
              bonus/get_next_line/get_next_line_utils.c\
+			 bonus/utils3.c\
              utils.c\
+			 utils2.c\
              parsing.c\
              linked_lists.c\
              ft_strjoin.c\

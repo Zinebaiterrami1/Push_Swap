@@ -6,12 +6,12 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:07:25 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/04 00:40:23 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/14 18:31:16 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "../../push_swap.h"
+#include "get_next_line.h"
 
 char	*get_next_line(int fd)
 {
@@ -26,6 +26,11 @@ char	*get_next_line(int fd)
 		return (NULL);
 	lines = _set_line(stash);
 	stash = _helper_function(stash);
+	if (!stash)
+	{
+		free(stash);
+		stash = NULL;
+	}
 	return (lines);
 }
 

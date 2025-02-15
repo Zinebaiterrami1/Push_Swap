@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
+/*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 13:07:14 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/15 13:54:41 by zait-err         ###   ########.fr       */
+/*   Created: 2025/02/14 16:05:34 by zait-err          #+#    #+#             */
+/*   Updated: 2025/02/14 16:21:23 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_BONUS_H
-# define PUSH_SWAP_BONUS_H
+#include "push_swap_bonus.h"
 
-# include "../bonus/get_next_line/get_next_line.h"
-# include "../push_swap.h"
+void	get_moves(char *r, t_stack *ss, t_stack *b)
+{
+	while (r != NULL)
+	{
+		check_move(r, &ss, &b);
+		free(r);
+		r = get_next_line(0);
+	}
+}
 
-void	get_moves(char *r, t_stack *ss, t_stack *b);
-void	check_move(char *instruction, t_stack **a, t_stack **b);
-int		is_sorted(t_stack **a);
-#endif
+int	is_sorted(t_stack **a)
+{
+	t_stack	*tmp;
+
+	tmp = *a;
+	while (tmp && tmp->next && tmp->data < tmp->next->data)
+	{
+		tmp = tmp->next;
+	}
+	if (tmp->next == NULL)
+		return (0);
+	return (1);
+}

@@ -10,73 +10,70 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
 #include "../push_swap.h"
+#include "push_swap_bonus.h"
 
-void ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-    int tmp;
-    
-    tmp = *a;
-    *a = *b;
-    *b = tmp;
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
-void sa(t_stack **a)
+void	sa(t_stack **a)
 {
-    
-    if(*a != NULL && (*a)->next != NULL)
-    {
-        ft_swap(&(*a)->data, &(*a)->next->data);
-    }
+	if (*a != NULL && (*a)->next != NULL)
+	{
+		ft_swap(&(*a)->data, &(*a)->next->data);
+	}
 }
 
-void ra(t_stack **a)
+void	ra(t_stack **a)
 {
-    t_stack *first;
-    t_stack *last;
-    
-    if(*a != NULL && (*a)->next != NULL)
-    {
-        first = (*a)->next;
-        last = ft_lstlast(*a);
-        last->next = *a;
-        (*a)->next = NULL;
-        *a = first;
-    }
+	t_stack	*first;
+	t_stack	*last;
+
+	if (*a != NULL && (*a)->next != NULL)
+	{
+		first = (*a)->next;
+		last = ft_lstlast(*a);
+		last->next = *a;
+		(*a)->next = NULL;
+		*a = first;
+	}
 }
 
-//void *rra()
-void rra(t_stack **a)
+// void *rra()
+void	rra(t_stack **a)
 {
-    t_stack *tmp;
-    t_stack *last;
-    
-    if(*a != NULL && (*a)->next != NULL)
-    {
-        last = *a;
-        tmp = *a;
-        while (last->next != NULL)
-        {
-            tmp = last;
-            last = last->next;
-        }
-        last->next = *a;
-        *a = last;
-        tmp->next = NULL;
-    }
+	t_stack	*tmp;
+	t_stack	*last;
+
+	if (*a != NULL && (*a)->next != NULL)
+	{
+		last = *a;
+		tmp = *a;
+		while (last->next != NULL)
+		{
+			tmp = last;
+			last = last->next;
+		}
+		last->next = *a;
+		*a = last;
+		tmp->next = NULL;
+	}
 }
 
-void pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    if(!*b)
-        return;
-    tmp =  (*b)->next;
-    ft_lstadd_front(a, ft_lstnew((*b)->data));
-    free(*b);
-    *b = tmp;
+	if (!*b)
+		return ;
+	tmp = (*b)->next;
+	ft_lstadd_front(a, ft_lstnew((*b)->data));
+	free(*b);
+	*b = tmp;
 }
-
-
