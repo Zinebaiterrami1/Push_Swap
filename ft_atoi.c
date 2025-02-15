@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 13:42:34 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/15 16:02:06 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/15 21:10:59 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ int	ft_atoi(const char *str)
 			sign = -sign;
 		i++;
 	}
-	while (str[i] == '0')
-		i++;
 	while (str[i] != '\0')
 	{
 		resultat = resultat * 10 + (str[i] - 48);
@@ -41,3 +39,28 @@ int	ft_atoi(const char *str)
 		print_error();
 	return (resultat);
 }
+
+// int mystrlen(char *str)
+// {
+// 	int i;
+
+// 	i = 0;
+// 	while(str[i] == '0' || str[i] == '+' || str[i] == '-')
+// 		i++;
+// 	while(str[i])
+// 		i++;
+// 	int j;
+// 	j = i;
+// 	while (str[j])
+// 	{
+// 		j++;
+// 	}
+// 	return (j - i);
+// }
+
+// void invalid_input(int *data, int i)
+// {
+// 	if(mystrlen(data[i]) > 11 && (mystrlen(data[i]) == -1 || mystrlen(data[i] == 0) || mystrlen(data[i]) > 2147483647) || mystrlen(data[i]) < -2147483648)
+// 	else if(mystrlen(data[i]) == 11 && mystrlen(data[i]) == -2147483648)
+// 	else if(mystrlen(data[i]) == 10 && mystrlen(data[i]) == 2147483647)
+// }

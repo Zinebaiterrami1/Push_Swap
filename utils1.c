@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:37:32 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/15 14:41:30 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/15 20:54:24 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ int	is_sorted(t_stack **a)
 	t_stack	*tmp;
 
 	tmp = *a;
-	if(ft_lstsize(tmp) == 1)
-		return (0);
 	while (tmp && tmp->next && tmp->data < tmp->next->data)
 	{
 		tmp = tmp->next;
@@ -64,7 +62,12 @@ int	is_sorted(t_stack **a)
 
 void	call_algo_functions(int count, t_stack **ss, int *r, t_stack **b)
 {
-	if (count == 2)
+	if	(count == 1)
+	{
+		free(r);
+		return ;
+	}
+	else if (count == 2)
 		algo_for2_elements(ss);
 	else if (count == 3)
 		algo_for3_elements(ss);
