@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:37:32 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/15 20:54:24 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/15 22:26:13 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	is_sorted(t_stack **a)
 
 void	call_algo_functions(int count, t_stack **ss, int *r, t_stack **b)
 {
-	if	(count == 1)
+	if (count == 1)
 	{
 		free(r);
 		return ;

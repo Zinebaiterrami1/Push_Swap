@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:13:32 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/15 17:25:44 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/15 22:28:11 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,20 +69,11 @@ int	main(int argc, char **argv)
 	array = 0;
 	if (argc < 2)
 		return (0);
-	check_overflow(argv);
 	join = join_args(argc, argv);
 	check_empty(argv);
 	sp = ft_split(join, ' ');
 	check_error(argc, sp);
 	a = init_stack(sp);
-	t_stack *tmp;
-	tmp = a;
-	while (tmp != NULL)
-	{
-		printf("%d-->", tmp->data);
-		tmp = tmp->next;	
-	}
-	printf("NULL\n");
 	is_sorted(&a);
 	call_algo_functions(calc_count(sp), &a, sort_array(array, argc, sp), &b);
 	ft_lstclear(&a);
