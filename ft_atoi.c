@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 13:42:34 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/15 13:56:53 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/15 16:02:06 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	ft_atoi(const char *str)
 			sign = -sign;
 		i++;
 	}
+	while (str[i] == '0')
+		i++;
 	while (str[i] != '\0')
 	{
 		resultat = resultat * 10 + (str[i] - 48);
