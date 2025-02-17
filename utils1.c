@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:37:32 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/15 22:26:13 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:59:05 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,18 @@ void	algo(t_stack **a, int *sorted_arr, t_stack **b)
 		end = size / 6;
 	else
 		end = size / 14;
+	// printf("size = %d ,end = %d \n",size,end);
 	push_to_b(a, sorted_arr, b, end);
-	while (*a)
-		pb(a, b);
+	// while (*a)
+	// 	pb(a, b);
 	phase_2(a, b);
 }
 
-int	is_sorted(t_stack **a)
+int	is_sorted(t_stack *a)
 {
 	t_stack	*tmp;
 
-	tmp = *a;
+	tmp = a;
 	while (tmp && tmp->next && tmp->data < tmp->next->data)
 	{
 		tmp = tmp->next;
@@ -62,6 +63,7 @@ int	is_sorted(t_stack **a)
 
 void	call_algo_functions(int count, t_stack **ss, int *r, t_stack **b)
 {
+	// printf("%d\n", count);
 	if (count == 1)
 	{
 		free(r);

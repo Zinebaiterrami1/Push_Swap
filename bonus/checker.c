@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:07:17 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/14 18:28:23 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/16 10:54:07 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,30 @@ int	main(int argc, char **argv)
 	s = ft_split(join, ' ');
 	check_error(argc, s);
 	ss = init_stack(s);
+	t_stack *tmp1;
+	tmp1 = ss;
+	while (tmp1 != NULL)
+	{
+		printf("%d-->", tmp1->data);
+		tmp1 = tmp1->next;
+	}
+	printf("NULL\n");
 	r = get_next_line(0);
-	get_moves(r, ss, b);
+	tmp1 = ss;
+	while (tmp1 != NULL)
+	{
+		printf("%d-->", tmp1->data);
+		tmp1 = tmp1->next;
+	}
+	printf("NULL\n");
+	get_moves(r, &ss, &b);
+	tmp1 = ss;
+	while (tmp1 != NULL)
+	{
+		printf("%d-->", tmp1->data);
+		tmp1 = tmp1->next;
+	}
+	printf("NULL\n");
 	if (is_sorted(&ss) == 0 && b == NULL)
 		write(1, "OK\n", 3);
 	else

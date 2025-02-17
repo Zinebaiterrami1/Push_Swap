@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:15:46 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/15 13:58:31 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/16 23:46:44 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void				*ft_memcpy(void *dest, const void *src, size_t n);
 size_t				ft_strlen(const char *str);
 int					*ft_bubble_sort(int arr[], int n);
 void				phase_2(t_stack **a, t_stack **b);
-int					is_sorted(t_stack **a);
+int					is_sorted(t_stack *a);
 void				ft_lstclear(t_stack **lst);
 char				**ft_free(char **s);
 void				incr_segment(int *start, int *end, int size);

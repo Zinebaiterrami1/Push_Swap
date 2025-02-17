@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:19:09 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/12 12:42:13 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:52:25 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,14 +99,11 @@ char	*join_args(int ac, char **av)
 
 	i = 1;
 	join = ft_strdup("");
-	while (i < ac)
+	while (i < ac )
 	{
 		join = ft_strjoin(join, av[i]);
-		while (i < ac - 1)
-		{
-			join = ft_strjoin(join, " ");
-			break ;
-		}
+		join = ft_strjoin(join, " ");
+	
 		i++;
 	}
 	return (join);

@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:48:25 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/13 20:43:29 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/16 10:03:39 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	ra(t_stack **a)
 	}
 }
 
-// void *rra()
 void	rra(t_stack **a)
 {
 	t_stack	*tmp;

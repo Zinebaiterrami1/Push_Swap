@@ -37,7 +37,6 @@ void	rb(t_stack **b)
 	}
 }
 
-// void *rra()
 void	rrb(t_stack **b)
 {
 	t_stack	*tmp;
