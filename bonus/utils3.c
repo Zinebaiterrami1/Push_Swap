@@ -14,7 +14,6 @@
 
 void	get_moves(char *r, t_stack **ss, t_stack **b)
 {
-
 	while (r != NULL)
 	{
 		check_move(r, ss, b);

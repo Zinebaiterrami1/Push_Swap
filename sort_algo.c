@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 15:57:26 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/17 15:05:16 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:20:49 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,8 @@ void	push_to_b(t_stack **a, int *arr_sorted, t_stack **b, int end)
 		return ;
 	start = 0;
 	size = ft_lstsize(*a);
-	// ();
 	while (end < size && *a)
 	{
-		// printf("data = %d , array = %d\n",(*a)->data,arr_sorted[start]);
 		if ((*a)->data <= arr_sorted[start])
 		{
 			pb(a, b);

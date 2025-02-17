@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:13:32 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/17 15:09:17 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:21:35 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,58 +72,14 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	check_empty(argv);
-	// {
 	join = join_args(argc, argv);
 	sp = ft_split(join, ' ');
-	// }
-	// else if (argc == 2)
-	// 	sp = ft_split(argv[1], ' ');
-	
-	
-	// int i = 0;
-	// while (sp[i])
-	// {
-	// 	printf("%s\n", sp[i]);
-	// 	i++;
-	// }
 	check_error(argc, sp);
 	a = init_stack(sp);
-	// 	t_stack *tmp;
-	// tmp = a;
-	// while (tmp != NULL)
-	// {
-	// 	printf("%d==>", tmp->data);
-	// 	tmp = tmp->next;
-	// }
-	// printf("\n%d\n", ft_lstsize(a));
 	is_sorted(a);
-	call_algo_functions(calc_count(sp), &a, sort_array(array, calc_count(sp), sp), &b);
-	// call_algo_functions(calc_count(sp), &a, sort_array(array,argc, sp), &b);
-	//algo(&a, sort_array(array, argc, sp),&b);
-
-	// printf("--------------------------------------------------------------\n");
-	// t_stack *tmp1;
-	// tmp1 = b;
-	// while (tmp1 != NULL)
-	// {
-	// 	printf("%d==>", tmp1->data);
-	// 	tmp1 = tmp->next;
-	// }
-	// printf("NULL\n");
+	call_algo_functions(calc_count(sp), &a, sort_array(array, calc_count(sp),
+			sp), &b);
 	ft_lstclear(&a);
 	ft_free(sp);
 	free(join);
-}
-
-void	check_overflow(char **argv)
-{
-	int	i;
-
-	i = 0;
-	while (argv[i])
-	{
-		if (ft_strlen(argv[i]) > 11 && ft_atoi(argv[i]) == -1)
-			print_error();
-		i++;
-	}
 }

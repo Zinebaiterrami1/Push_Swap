@@ -99,11 +99,10 @@ char	*join_args(int ac, char **av)
 
 	i = 1;
 	join = ft_strdup("");
-	while (i < ac )
+	while (i < ac)
 	{
 		join = ft_strjoin(join, av[i]);
 		join = ft_strjoin(join, " ");
-	
 		i++;
 	}
 	return (join);
