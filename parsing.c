@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 00:55:31 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/15 15:58:09 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/21 22:15:25 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	is_not_digit(const char *str)
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
+	if (!str[i])
+		return (0);
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -62,7 +64,7 @@ int	check_if_args_empty(char *av)
 	return (1);
 }
 
-void	check_error(int ac, char **av)
+void	check_error(int ac, char **av, char *join, char **s)
 {
 	int	j;
 
@@ -72,7 +74,11 @@ void	check_error(int ac, char **av)
 	while (av[j])
 	{
 		if (!is_not_digit(av[j]) || !check_if_args_empty(av[j]))
+		{
+			free(join);
+			ft_free(s);
 			print_error();
+		}
 		j++;
 	}
 }

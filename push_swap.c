@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:13:32 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/17 15:21:35 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/21 22:02:39 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ int	*sort_array(int *array, int ac, char **s)
 
 int	main(int argc, char **argv)
 {
-	char	**sp;
-	t_stack	*a;
-	t_stack	*b;
-	int		*array;
-	char	*join;
+	char **sp;
+	t_stack *a;
+	t_stack *b;
+	int *array;
+	char *join;
 
 	join = NULL;
 	b = NULL;
@@ -74,12 +74,14 @@ int	main(int argc, char **argv)
 	check_empty(argv);
 	join = join_args(argc, argv);
 	sp = ft_split(join, ' ');
-	check_error(argc, sp);
+	check_error(argc, sp, join, sp);
 	a = init_stack(sp);
-	is_sorted(a);
+	if (!is_sorted(&a))
+		exit(1);
 	call_algo_functions(calc_count(sp), &a, sort_array(array, calc_count(sp),
 			sp), &b);
 	ft_lstclear(&a);
+	ft_lstclear(&b);
 	ft_free(sp);
 	free(join);
 }

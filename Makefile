@@ -1,6 +1,6 @@
 NAME = push_swap
 BONUS_NAME = checker
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g3
+CFLAGS = -Wall -Werror -Wextra -g
 
 CC = cc 
 SRCS = common_instructions.c\

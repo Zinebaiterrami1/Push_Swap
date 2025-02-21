@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:37:32 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/17 15:17:21 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/21 18:24:49 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ void	algo(t_stack **a, int *sorted_arr, t_stack **b)
 	phase_2(a, b);
 }
 
-int	is_sorted(t_stack *a)
+int	is_sorted(t_stack **a)
 {
 	t_stack	*tmp;
 
-	tmp = a;
+	tmp = *a;
 	while (tmp && tmp->next && tmp->data < tmp->next->data)
 	{
 		tmp = tmp->next;

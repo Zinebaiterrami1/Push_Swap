@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:15:46 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/16 23:46:44 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/21 19:14:41 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void				print_error(void);
 int					is_not_digit(const char *str);
 int					check_dup(t_stack *a);
 int					check_if_args_empty(char *av);
-void				check_error(int ac, char **av);
+void				check_error(int ac, char **av, char *join, char **s);
 char				*ft_strjoin(char *s1, char *s2);
 t_stack				*init_stack(char **av);
 char				*join_args(int ac, char **av);
@@ -67,9 +67,9 @@ void				*ft_memcpy(void *dest, const void *src, size_t n);
 size_t				ft_strlen(const char *str);
 int					*ft_bubble_sort(int arr[], int n);
 void				phase_2(t_stack **a, t_stack **b);
-int					is_sorted(t_stack *a);
+int					is_sorted(t_stack **a);
 void				ft_lstclear(t_stack **lst);
-char				**ft_free(char **s);
+void				ft_free(char **s);
 void				incr_segment(int *start, int *end, int size);
 void				algo(t_stack **a, int *sorted_arr, t_stack **b);
 void				call_algo_functions(int count, t_stack **ss, int *r,

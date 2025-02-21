@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:16:24 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/14 15:59:34 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/21 18:57:25 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	i = 0;
 	if (start >= ft_strlen1(s))
-		return (ft_strdup1(""));
+		return (NULL);
 	if (len > ft_strlen1(s + start))
 		len = ft_strlen1(s + start);
 	substr = (char *)malloc(sizeof(char) * (len + 1));

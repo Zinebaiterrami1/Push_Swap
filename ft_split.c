@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:23:24 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/13 12:53:25 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/21 19:15:46 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	*mystrdup(const char *s, char c)
 	return (array);
 }
 
-char	**ft_free(char **s)
+void	ft_free(char **s)
 {
 	int	i;
 
@@ -90,7 +90,6 @@ char	**ft_free(char **s)
 		i++;
 	}
 	free(s);
-	return (NULL);
 }
 
 char	**ft_split(const char *s, char c)
@@ -114,7 +113,7 @@ char	**ft_split(const char *s, char c)
 		{
 			str[j] = mystrdup(s + i, c);
 			if (str[j++] == NULL)
-				return (ft_free(str));
+				ft_free(str);
 			while (s[i] && s[i] != c)
 				i++;
 		}
