@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zait-err <zait-err@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 00:55:31 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/21 22:15:25 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:18:53 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ t_stack	*init_stack(char **av)
 	stack = NULL;
 	while (av[j])
 	{
-		data = ft_atoi(av[j], av);
+		data = ft_atoi(av[j], av, &stack);
 		new = ft_lstnew(data);
 		if (!new)
 			exit(1);

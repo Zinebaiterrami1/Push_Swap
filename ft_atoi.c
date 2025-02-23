@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zait-err <zait-err@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 13:42:34 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/15 23:08:37 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:21:07 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str, char **av)
+int	ft_atoi(const char *str, char **av, t_stack **stack)
 {
 	int			i;
 	long long	result;
@@ -32,12 +32,19 @@ int	ft_atoi(const char *str, char **av)
 	while (str[i] != '\0')
 	{
 		result = result * 10 + (str[i++] - 48);
-		if ((sign == 1 && result > INT_MAX)
-			|| (sign == -1 && (-result) < INT_MIN))
+		if ((sign == 1 && result > INT_MAX) || (sign == -1
+				&& (-result) < INT_MIN))
 		{
-			ft_free(av);
-			print_error();
+			helper_fct1(av, stack);
 		}
 	}
 	return (sign * result);
+}
+
+void helper_fct1(char **av, t_stack **stack)
+{
+	ft_free(av);
+	if (stack)
+		ft_lstclear(stack);
+	print_error();
 }

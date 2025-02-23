@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zait-err <zait-err@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:15:46 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/21 19:14:41 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:20:28 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void				ss(t_stack **a, t_stack **b);
 void				rr(t_stack **a, t_stack **b);
 void				rrr(t_stack **a, t_stack **b);
 char				**ft_split(const char *s, char c);
-int					ft_atoi(const char *str, char **av);
+int					ft_atoi(const char *str, char **av, t_stack **stack);
 void				algo_for2_elements(t_stack **a);
 void				algo_for3_elements(t_stack **a);
 void				algo_for4_elements(t_stack **a, t_stack **b);
@@ -77,5 +77,6 @@ void				call_algo_functions(int count, t_stack **ss, int *r,
 int					calc_count(char **sp);
 void				check_empty(char **av);
 int					check_espace(char *av);
-void				check_overflow(char **argv);
+void				helper_fct1(char **av, t_stack **stack);
+void				helper_fct2(t_stack **a, char **sp);
 #endif

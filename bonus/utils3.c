@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zait-err <zait-err@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:05:34 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/21 23:01:23 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/23 15:57:29 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,15 @@ int	is_sorted(t_stack **a)
 	}
 	if (tmp->next == NULL)
 		return (0);
+	return (1);
+}
+
+int	helper_fct3(t_stack **a, t_stack **b)
+{
+	get_next_line(0, -1);
+	if (a)
+		ft_lstclear(a);
+	if (b)
+		ft_lstclear(b);
 	return (1);
 }

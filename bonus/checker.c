@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zait-err <zait-err@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:07:17 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/21 23:06:21 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:13:10 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,7 @@ int	check_move(char *instruction, t_stack **a, t_stack **b)
 	else if (ft_strcmp(instruction, "rrr\n") == 0)
 		rrr(a, b);
 	else
-	{ // clean the debries
-		get_next_line(0, -1); // cleans the static variable
-		if (a)
-			ft_lstclear(a);
-		if (b)
-			ft_lstclear(b);
-		return (1);
-	} 
+		return (helper_fct3(a, b));
 	return (0);
 }
 
@@ -71,9 +64,10 @@ void	helper_function1(t_stack *ss, t_stack *b, char *join, char **s)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
+	ft_free(s);
 	(void)join;
-	(void)s;
-
+	ft_lstclear(&ss);
+	ft_lstclear(&b);
 }
 
 int	main(int argc, char **argv)
@@ -91,14 +85,14 @@ int	main(int argc, char **argv)
 	check_empty(argv);
 	join = join_args(argc, argv);
 	s = ft_split(join, ' ');
-	check_error(argc, s, join, s);
+	check_error(argc, s, join);
+	free(join);
 	ss = init_stack(s);
 	r = get_next_line(0, 0);
 	if (get_moves(r, &ss, &b))
 	{
-		free(join);
 		ft_free(s);
-		free(r); // already cleansed 
+		free(r);
 		print_error();
 	}
 	helper_function1(ss, b, join, s);
