@@ -1,6 +1,6 @@
 NAME = push_swap
 BONUS_NAME = checker
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 
 CC = cc 
 SRCS = common_instructions.c\

@@ -6,19 +6,24 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:07:25 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/21 18:55:13 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/21 22:59:46 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 #include "get_next_line.h"
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int k)
 {
 	char		*lines;
 	static char	*stash;
 
 	lines = NULL;
+	if (k == -1)
+	{
+		free(stash);
+		return (NULL);
+	}
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	stash = _fill_line_buffer(fd, stash);
@@ -26,11 +31,6 @@ char	*get_next_line(int fd)
 		return (NULL);
 	lines = _set_line(stash);
 	stash = _helper_function(stash);
-	if (!stash)
-	{
-		free(stash);
-		stash = NULL;
-	}
 	return (lines);
 }
 

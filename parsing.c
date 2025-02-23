@@ -64,7 +64,7 @@ int	check_if_args_empty(char *av)
 	return (1);
 }
 
-void	check_error(int ac, char **av, char *join, char **s)
+void	check_error(int ac, char **av, char *join)
 {
 	int	j;
 
@@ -76,7 +76,7 @@ void	check_error(int ac, char **av, char *join, char **s)
 		if (!is_not_digit(av[j]) || !check_if_args_empty(av[j]))
 		{
 			free(join);
-			ft_free(s);
+			ft_free(av);
 			print_error();
 		}
 		j++;
@@ -94,7 +94,7 @@ t_stack	*init_stack(char **av)
 	stack = NULL;
 	while (av[j])
 	{
-		data = ft_atoi(av[j]);
+		data = ft_atoi(av[j], av);
 		new = ft_lstnew(data);
 		if (!new)
 			exit(1);
@@ -102,6 +102,10 @@ t_stack	*init_stack(char **av)
 		j++;
 	}
 	if (check_dup(stack) == 0)
+	{
+		ft_lstclear(&stack);
+		ft_free(av);
 		print_error();
+	}
 	return (stack);
 }

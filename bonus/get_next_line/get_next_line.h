@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:14:38 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/04 00:39:34 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/21 23:00:37 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #  define BUFFER_SIZE 1
 # endif
 
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, int k);
 char	*_fill_line_buffer(int fd, char *str);
 char	*_set_line(char *line_buffer);
 size_t	ft_strlen1(const char *s);

@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 13:07:17 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/21 22:46:59 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/21 23:06:21 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,14 @@ int	check_move(char *instruction, t_stack **a, t_stack **b)
 	else if (ft_strcmp(instruction, "rrr\n") == 0)
 		rrr(a, b);
 	else
-	{
+	{ // clean the debries
+		get_next_line(0, -1); // cleans the static variable
+		if (a)
+			ft_lstclear(a);
+		if (b)
+			ft_lstclear(b);
 		return (1);
-		// get_next_line(0);
-		// if (a)
-		// 	ft_lstclear(a);
-		// if (b)
-		// 	ft_lstclear(b);
-		// write(1, "Error\n", 7);
-		// exit(1);
-	}
+	} 
 	return (0);
 }
 
@@ -73,10 +71,9 @@ void	helper_function1(t_stack *ss, t_stack *b, char *join, char **s)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
-	ft_lstclear(&ss);
-	ft_lstclear(&b);
-	free(join);
-	ft_free(s);
+	(void)join;
+	(void)s;
+
 }
 
 int	main(int argc, char **argv)
@@ -96,12 +93,12 @@ int	main(int argc, char **argv)
 	s = ft_split(join, ' ');
 	check_error(argc, s, join, s);
 	ss = init_stack(s);
-	r = get_next_line(0);
+	r = get_next_line(0, 0);
 	if (get_moves(r, &ss, &b))
 	{
 		free(join);
 		ft_free(s);
-		free(r);
+		free(r); // already cleansed 
 		print_error();
 	}
 	helper_function1(ss, b, join, s);

@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:05:34 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/21 19:33:14 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/21 23:01:23 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	get_moves(char *r, t_stack **ss, t_stack **b)
 		if (returnval == 1)
 			return (returnval);
 		free(r);
-		r = get_next_line(0);
+		r = get_next_line(0, 0);
 	}
 	return (0);
 }

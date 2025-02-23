@@ -50,7 +50,7 @@ int	*sort_array(int *array, int ac, char **s)
 		return (0);
 	while (s[j])
 	{
-		array[j] = ft_atoi(s[j]);
+		array[j] = ft_atoi(s[j], s);
 		j++;
 	}
 	r = ft_bubble_sort(array, size);
@@ -74,14 +74,19 @@ int	main(int argc, char **argv)
 	check_empty(argv);
 	join = join_args(argc, argv);
 	sp = ft_split(join, ' ');
-	check_error(argc, sp, join, sp);
+	check_error(argc, sp, join);
+	if (join)
+		free(join);
 	a = init_stack(sp);
 	if (!is_sorted(&a))
+	{
+		ft_lstclear(&a);
+		free_split(sp);
 		exit(1);
+	}
 	call_algo_functions(calc_count(sp), &a, sort_array(array, calc_count(sp),
 			sp), &b);
 	ft_lstclear(&a);
 	ft_lstclear(&b);
 	ft_free(sp);
-	free(join);
 }
