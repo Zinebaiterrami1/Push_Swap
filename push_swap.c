@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 20:13:32 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/23 16:20:53 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:08:42 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,5 @@ void	helper_fct2(t_stack **a, char **sp)
 {
 	ft_lstclear(a);
 	free_split(sp);
-	exit(1);
+	exit(0);
 }
