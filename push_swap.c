@@ -86,7 +86,7 @@ int	main(int argc, char **argv)
 	ft_free(sp);
 }
 
-void helper_fct2(t_stack **a, char **sp)
+void	helper_fct2(t_stack **a, char **sp)
 {
 	ft_lstclear(a);
 	free_split(sp);

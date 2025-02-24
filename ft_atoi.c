@@ -6,7 +6,7 @@
 /*   By: zait-err <zait-err@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 13:42:34 by zait-err          #+#    #+#             */
-/*   Updated: 2025/02/23 16:21:07 by zait-err         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:42:08 by zait-err         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_atoi(const char *str, char **av, t_stack **stack)
 	return (sign * result);
 }
 
-void helper_fct1(char **av, t_stack **stack)
+void	helper_fct1(char **av, t_stack **stack)
 {
 	ft_free(av);
 	if (stack)
